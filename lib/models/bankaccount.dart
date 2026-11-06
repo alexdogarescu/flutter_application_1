@@ -1,18 +1,20 @@
-class BankAccount {
-    late String? accountNumber;
-    String holderName;
-    double balance = 0.0;
-    String? bankBranch;
 
-    BankAccount({required this.holderName, this.bankBranch});
+class BankAccount{
+  late final String accountNumber;
+  final String holderName;
+  double balance = 0.0;
+  final String? bankBranch;
+  bool isInit = false;  
 
-    void initialiseAccount(String number) {
-      if(this.accountNumber == null) {
-          this.accountNumber = number;
-      }
-    }
+  BankAccount({required this.holderName, this.balance = 0.0, this.bankBranch });
 
-    String isAccount() =>
-      this.accountNumber == null ? "Account initialised" : "Account not yet initialised";
+  void initializeAccount(String number){
+    accountNumber = number;
+    isInit = true;
+  }
+  
+  bool checkInit(){
+    return isInit;
+  }
 
 }
