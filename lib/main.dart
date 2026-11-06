@@ -5,10 +5,9 @@ import 'models/library.dart';
 import 'models/book.dart';
 import 'models/magazine.dart';
 import 'models/library_item.dart';
+import 'screens/todo_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MaterialApp(home: TodoPage()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,11 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lab 2',
+      title: 'ADMD App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const UsersPage(title: 'L2'),
     );
   }
 }
